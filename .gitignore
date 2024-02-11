@@ -18,3 +18,4 @@ output
 packages/*
 Sample/*/packages/*
 *.LDF
+.vs/
