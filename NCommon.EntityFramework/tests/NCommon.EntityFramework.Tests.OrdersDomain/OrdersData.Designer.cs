@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -150,6 +151,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         private ObjectSet<Product> _Products;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -193,11 +195,11 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -222,6 +224,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -420,6 +423,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         partial void OnLastNameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -446,6 +450,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -474,6 +479,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -654,6 +660,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         partial void OnSalesPersonLastNameChanged();
 
         #endregion
+
     
     }
     
@@ -679,6 +686,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -757,6 +765,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         partial void OnShipDateChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -821,6 +830,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -845,6 +855,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -947,6 +958,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         partial void OnStoreChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1027,6 +1039,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1051,6 +1064,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1129,6 +1143,7 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         partial void OnDescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1155,8 +1170,10 @@ namespace NCommon.Data.EntityFramework.Tests.OrdersDomain
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }
