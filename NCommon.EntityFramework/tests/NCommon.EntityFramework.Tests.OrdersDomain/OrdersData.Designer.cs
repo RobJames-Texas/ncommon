@@ -9,19 +9,18 @@
 
 using System;
 using System.ComponentModel;
-using System.Data.EntityClient;
-using System.Data.Objects;
-using System.Data.Objects.DataClasses;
-using System.Linq;
+using System.Data.Entity.Core.EntityClient;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_Customer_Orders", "Customers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Customer), "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Order))]
-[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_OrderItems_Product", "Products", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Product), "OrderItems", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.OrderItem))]
-[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_Orders_OrderItems", "Orders", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Order), "OrderItems", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.OrderItem))]
+[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_Customer_Orders", "Customers", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Customer), "Orders", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Order))]
+[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_OrderItems_Product", "Products", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Product), "OrderItems", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.OrderItem))]
+[assembly: EdmRelationshipAttribute("NCommon.Data.EntityFramework.Tests.OrdersDomain", "FK_Orders_OrderItems", "Orders", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.Order), "OrderItems", System.Data.Entity.Core.Metadata.Edm.RelationshipMultiplicity.Many, typeof(NCommon.Data.EntityFramework.Tests.OrdersDomain.OrderItem))]
 
 #endregion
 

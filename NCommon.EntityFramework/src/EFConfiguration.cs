@@ -15,7 +15,7 @@
 #endregion
 
 using System;
-using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
 using NCommon.Configuration;
 
 namespace NCommon.Data.EntityFramework

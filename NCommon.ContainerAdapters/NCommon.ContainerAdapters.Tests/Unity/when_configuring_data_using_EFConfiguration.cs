@@ -1,4 +1,3 @@
-using System.Data.Objects;
 using CommonServiceLocator;
 using Microsoft.Practices.Unity;
 using NCommon.ContainerAdapter.Unity;

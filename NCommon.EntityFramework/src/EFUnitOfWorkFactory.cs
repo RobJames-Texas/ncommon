@@ -15,7 +15,7 @@
 #endregion
 
 using System;
-using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
 
 namespace NCommon.Data.EntityFramework
 {
@@ -31,7 +31,7 @@ namespace NCommon.Data.EntityFramework
         /// to resolve instances of <see cref="ObjectContext"/>.
         /// </summary>
         /// <param name="contextProvider">A <see cref="Func{T}"/> of type <see cref="ObjectContext"/>.</param>
-        public void RegisterObjectContextProvider(Func<ObjectContext> contextProvider)
+        public void RegisterObjectContextProvider(Func<System.Data.Entity.Core.Objects.ObjectContext> contextProvider)
         {
             Guard.Against<ArgumentNullException>(contextProvider == null,
                                                  "Invalid object context provider registration. " +

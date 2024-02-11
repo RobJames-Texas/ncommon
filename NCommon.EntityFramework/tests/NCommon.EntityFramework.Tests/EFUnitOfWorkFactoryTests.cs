@@ -14,12 +14,9 @@
 //limitations under the License. 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Data.Objects;
 using NCommon.Data.EntityFramework.Tests.OrdersDomain;
 using NUnit.Framework;
-using Rhino.Mocks;
+using System;
 
 namespace NCommon.Data.EntityFramework.Tests
 {

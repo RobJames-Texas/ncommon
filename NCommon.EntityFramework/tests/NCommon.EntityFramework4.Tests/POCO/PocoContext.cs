@@ -1,6 +1,5 @@
-using System.Data.EntityClient;
-using System.Data.Objects;
 using NCommon.EntityFramework4.Tests.Models;
+using System.Data.Entity.Core.Objects;
 
 namespace NCommon.EntityFramework4.Tests.POCO
 {

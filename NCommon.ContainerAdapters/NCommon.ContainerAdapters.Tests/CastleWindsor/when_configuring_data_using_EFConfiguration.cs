@@ -1,4 +1,3 @@
-using System.Data.Objects;
 using Castle.Windsor;
 using CommonServiceLocator;
 using NCommon.ContainerAdapter.CastleWindsor;

@@ -1,6 +1,6 @@
 using System;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
-using System.Data.Objects;
 
 namespace NCommon.EntityFramework4.Tests.Models
 {

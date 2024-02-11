@@ -1,4 +1,3 @@
-using System.Data.Objects;
 using CommonServiceLocator;
 using NCommon.ContainerAdapter.StructureMap;
 using NCommon.Data;

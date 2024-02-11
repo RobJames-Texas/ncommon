@@ -1,5 +1,5 @@
 using System;
-using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using NCommon.Data.EntityFramework.Tests.HRDomain;
 using NCommon.Data.EntityFramework.Tests.OrdersDomain;

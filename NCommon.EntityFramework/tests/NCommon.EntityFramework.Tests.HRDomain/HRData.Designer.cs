@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
+[assembly: global::System.Data.Entity.Core.Objects.DataClasses.EdmSchemaAttribute()]
 
 // Original file name:
 // Generation date: 2/11/2024 12:08:07 PM
@@ -18,7 +18,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
     /// <summary>
     /// There are no comments for HREntities in the schema.
     /// </summary>
-    public partial class HREntities : global::System.Data.Objects.ObjectContext
+    public partial class HREntities : global::System.Data.Entity.Core.Objects.ObjectContext
     {
         /// <summary>
         /// Initializes a new HREntities object using the connection string found in the 'HREntities' section of the application configuration file.
@@ -39,7 +39,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// Initialize a new HREntities object.
         /// </summary>
-        public HREntities(global::System.Data.EntityClient.EntityConnection connection) : 
+        public HREntities(global::System.Data.Entity.Core.EntityClient.EntityConnection connection) : 
                 base(connection, "HREntities")
         {
             this.OnContextCreated();
@@ -49,7 +49,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// There are no comments for SalesPersons in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<SalesPerson> SalesPersons
+        public global::System.Data.Entity.Core.Objects.ObjectQuery<SalesPerson> SalesPersons
         {
             get
             {
@@ -61,7 +61,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<SalesPerson> _SalesPersons;
+        private global::System.Data.Entity.Core.Objects.ObjectQuery<SalesPerson> _SalesPersons;
         /// <summary>
         /// There are no comments for SalesPersons in the schema.
         /// </summary>
@@ -77,10 +77,10 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NCommon.Data.EntityFramework.Tests.HRDomain", Name="SalesPerson")]
+    [global::System.Data.Entity.Core.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="NCommon.Data.EntityFramework.Tests.HRDomain", Name="SalesPerson")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class SalesPerson : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class SalesPerson : global::System.Data.Entity.Core.Objects.DataClasses.EntityObject
     {
         /// <summary>
         /// Create a new SalesPerson object.
@@ -96,7 +96,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// There are no comments for property Id in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public int Id
@@ -109,7 +109,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             {
                 this.OnIdChanging(value);
                 this.ReportPropertyChanging("Id");
-                this._Id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._Id = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("Id");
                 this.OnIdChanged();
             }
@@ -123,7 +123,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// There are no comments for property FirstName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public string FirstName
@@ -136,7 +136,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             {
                 this.OnFirstNameChanging(value);
                 this.ReportPropertyChanging("FirstName");
-                this._FirstName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._FirstName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("FirstName");
                 this.OnFirstNameChanged();
             }
@@ -150,7 +150,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// There are no comments for property LastName in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public string LastName
@@ -163,7 +163,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             {
                 this.OnLastNameChanging(value);
                 this.ReportPropertyChanging("LastName");
-                this._LastName = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this._LastName = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("LastName");
                 this.OnLastNameChanged();
             }
@@ -177,7 +177,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// There are no comments for property SalesQuota in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public global::System.Nullable<float> SalesQuota
@@ -190,7 +190,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             {
                 this.OnSalesQuotaChanging(value);
                 this.ReportPropertyChanging("SalesQuota");
-                this._SalesQuota = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._SalesQuota = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("SalesQuota");
                 this.OnSalesQuotaChanged();
             }
@@ -204,7 +204,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
         /// <summary>
         /// There are no comments for property SalesYTD in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Entity.Core.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         public global::System.Nullable<decimal> SalesYTD
@@ -217,7 +217,7 @@ namespace NCommon.Data.EntityFramework.Tests.HRDomain
             {
                 this.OnSalesYTDChanging(value);
                 this.ReportPropertyChanging("SalesYTD");
-                this._SalesYTD = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this._SalesYTD = global::System.Data.Entity.Core.Objects.DataClasses.StructuralObject.SetValidValue(value);
                 this.ReportPropertyChanged("SalesYTD");
                 this.OnSalesYTDChanged();
             }

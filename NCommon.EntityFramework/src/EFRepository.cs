@@ -17,7 +17,6 @@
 using CommonServiceLocator;
 using System;
 using System.Collections.Generic;
-using System.Data.Objects;
 using System.Linq;
 
 namespace NCommon.Data.EntityFramework
@@ -40,7 +39,7 @@ namespace NCommon.Data.EntityFramework
                 return;
 
             var sessions = ServiceLocator.Current.GetAllInstances<IEFSession>();
-            if (sessions != null && sessions.Count() > 0)
+            if (sessions != null && sessions.Any())
                 _privateSession = sessions.First();
         }
 
