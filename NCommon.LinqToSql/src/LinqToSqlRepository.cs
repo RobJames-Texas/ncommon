@@ -19,7 +19,7 @@ using System.Data.Linq;
 using System.Linq;
 using System.Linq.Expressions;
 using NCommon.Extensions;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 
 namespace NCommon.Data.LinqToSql
 {
@@ -38,20 +38,12 @@ namespace NCommon.Data.LinqToSql
         /// </summary>
         public LinqToSqlRepository()
         {
-            Initialize();
-        }
-        
-        /// <summary>
-        /// Default Init.
-        /// </summary>
-        protected virtual void Initialize()
-        {
             if (ServiceLocator.Current == null)
                 return;
 
             var sessions = ServiceLocator.Current.GetAllInstances<ILinqToSqlSession>();
-            if (sessions != null && sessions.Count() > 0)
-                _privateSession = sessions.FirstOrDefault();        
+            if (sessions != null && sessions.Any())
+                _privateSession = sessions.FirstOrDefault();
         }
 
         /// <summary>

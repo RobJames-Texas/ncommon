@@ -1,5 +1,5 @@
 using System;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data;
 using NCommon.Data.Impl;
 using NUnit.Framework;

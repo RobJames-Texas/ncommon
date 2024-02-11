@@ -30,8 +30,8 @@ namespace NCommon.EntityFramework4.Tests.POCO
                 scope.Commit();
             }
 
-            Assert.NotNull(savedOrder);
-            Assert.NotNull(savedOrder.Customer);
+            Assert.That(savedOrder != null);
+            Assert.That(savedOrder.Customer != null);
             Assert.DoesNotThrow(() => { var firstName = savedOrder.Customer.FirstName; });
 
         }
@@ -63,12 +63,12 @@ namespace NCommon.EntityFramework4.Tests.POCO
                 scope.Commit();
             }
 
-            Assert.NotNull(savedCustomer);
-            Assert.NotNull(savedCustomer.Orders);
+            Assert.That(savedCustomer != null);
+            Assert.That(savedCustomer.Orders != null);
             savedCustomer.Orders.ForEach(order =>
             {
-                Assert.NotNull(order.OrderItems);
-                order.OrderItems.ForEach(orderItem => Assert.NotNull(orderItem.Product));
+                Assert.That(order.OrderItems != null);
+                order.OrderItems.ForEach(orderItem => Assert.That(orderItem.Product != null));
             });
         }
 
@@ -99,12 +99,12 @@ namespace NCommon.EntityFramework4.Tests.POCO
                 scope.Commit();
             }
 
-            Assert.NotNull(savedCustomer);
-            Assert.NotNull(savedCustomer.Orders);
+            Assert.That(savedCustomer != null);
+            Assert.That(savedCustomer.Orders != null);
             savedCustomer.Orders.ForEach(order =>
             {
-                Assert.NotNull(order.OrderItems);
-                order.OrderItems.ForEach(orderItem => Assert.NotNull(orderItem.Product));
+                Assert.That(order.OrderItems != null);
+                order.OrderItems.ForEach(orderItem => Assert.That(orderItem.Product != null));
             });
         }
 

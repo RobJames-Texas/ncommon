@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 using System.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data;
 using NCommon.Data.EntityFramework;
 using NCommon.EntityFramework4.Tests.Models;

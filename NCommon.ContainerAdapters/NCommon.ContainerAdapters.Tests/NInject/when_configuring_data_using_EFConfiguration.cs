@@ -1,5 +1,5 @@
 using System.Data.Objects;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.ContainerAdapter.Ninject;
 using NCommon.Data;
 using NCommon.Data.EntityFramework;
@@ -14,7 +14,7 @@ namespace NCommon.ContainerAdapters.Tests.Ninject
     {
         IKernel _kernel;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _kernel = new StandardKernel();

@@ -13,7 +13,7 @@ namespace NCommon.Tests.State
         Hashtable _stateData;
         IContext _context;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             _stateData = new Hashtable();
@@ -108,7 +108,7 @@ namespace NCommon.Tests.State
             var data = "test";
             _stateData[Utils.BuildFullKey<string>(null)] = data;
             new HttpSessionState(_context).Remove<string>();
-            Assert.IsFalse(_stateData.ContainsKey(Utils.BuildFullKey<string>(null)));
+            Assert.That(_stateData.ContainsKey(Utils.BuildFullKey<string>(null)), Is.False);
         }
     }
 }

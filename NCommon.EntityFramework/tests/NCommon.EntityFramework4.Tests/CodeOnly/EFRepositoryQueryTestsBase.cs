@@ -1,7 +1,7 @@
 using System;
 using System.Data.Entity;
 using System.Data.Objects;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data;
 using NCommon.Data.EntityFramework;
 using NCommon.State;
@@ -18,7 +18,7 @@ namespace NCommon.EntityFramework4.Tests.CodeOnly
         protected ObjectContext Context;
         EFUnitOfWorkFactory _unitOfWorkFactory;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public virtual void FixtureSetup()
         {
             _unitOfWorkFactory = new EFUnitOfWorkFactory();

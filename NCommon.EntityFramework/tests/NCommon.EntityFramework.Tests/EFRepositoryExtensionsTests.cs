@@ -1,4 +1,4 @@
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.EntityFramework.Tests.OrdersDomain;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -8,7 +8,7 @@ namespace NCommon.Data.EntityFramework.Tests
     [TestFixture]
     public class EFRepositoryExtensionsTests
     {
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             var mockLocator = MockRepository.GenerateStub<IServiceLocator>();
@@ -20,7 +20,7 @@ namespace NCommon.Data.EntityFramework.Tests
         {
             var repository = new EFRepository<Order>();
             var fetchingRepo = repository.Fetch(order => order.Customer);
-            Assert.AreEqual("Customer", fetchingRepo.FetchingPath);
+            Assert.Equals("Customer", fetchingRepo.FetchingPath);
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace NCommon.Data.EntityFramework.Tests
         {
             var repository = new EFRepository<Customer>();
             var fetchingRepo = repository.FetchMany(customer => customer.Orders);
-            Assert.AreEqual("Orders", fetchingRepo.FetchingPath);
+            Assert.Equals("Orders", fetchingRepo.FetchingPath);
         }
 
         [Test]
@@ -39,7 +39,7 @@ namespace NCommon.Data.EntityFramework.Tests
                 .Fetch(order => order.Customer)
                 .ThenFetchMany(customer => customer.Orders);
 
-            Assert.AreEqual("Customer.Orders", fetchingRepo.FetchingPath);
+            Assert.Equals("Customer.Orders", fetchingRepo.FetchingPath);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace NCommon.Data.EntityFramework.Tests
             var fetchingRepo = repository
                 .FetchMany(x => x.OrderItems)
                 .ThenFetch(x => x.Product);
-            Assert.AreEqual("OrderItems.Product", fetchingRepo.FetchingPath);
+            Assert.Equals("OrderItems.Product", fetchingRepo.FetchingPath);
         }
     }
 }

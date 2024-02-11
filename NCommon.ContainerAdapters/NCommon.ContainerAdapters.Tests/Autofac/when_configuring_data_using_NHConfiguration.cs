@@ -1,5 +1,5 @@
 using Autofac;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.ContainerAdapter.Autofac;
 using NCommon.Data;
 using NCommon.Data.NHibernate;
@@ -13,7 +13,7 @@ namespace NCommon.ContainerAdapters.Tests.Autofac
     {
         IContainer _container;
 
-        [TestFixtureSetUp()]
+        [OneTimeSetUp()]
         public void FixtureSetup()
         {
             var builder = new ContainerBuilder();

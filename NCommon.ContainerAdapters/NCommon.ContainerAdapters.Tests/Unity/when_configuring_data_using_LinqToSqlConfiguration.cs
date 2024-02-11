@@ -1,5 +1,5 @@
 using System.Data.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using Microsoft.Practices.Unity;
 using NCommon.ContainerAdapter.Unity;
 using NCommon.Data;
@@ -14,7 +14,7 @@ namespace NCommon.ContainerAdapters.Tests.Unity
     {
         IUnityContainer _container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _container = new UnityContainer();

@@ -1,4 +1,4 @@
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data;
 using NCommon.State;
 using NUnit.Framework;

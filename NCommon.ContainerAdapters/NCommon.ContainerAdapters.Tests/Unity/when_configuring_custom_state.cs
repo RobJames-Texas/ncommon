@@ -12,7 +12,7 @@ namespace NCommon.ContainerAdapters.Tests.Unity
     {
         IUnityContainer _container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _container = new UnityContainer();

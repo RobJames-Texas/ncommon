@@ -11,7 +11,7 @@ namespace NCommon.Data.LinqToSql.Tests
         OrdersDataDataContext _ordersDataContext;
         HRDataDataContext _hrDataContext;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _ordersDataContext = new OrdersDataDataContext(ConfigurationManager.ConnectionStrings["testDb"].ConnectionString);

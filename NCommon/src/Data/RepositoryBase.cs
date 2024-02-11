@@ -19,7 +19,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Extensions;
 using NCommon.Specifications;
 

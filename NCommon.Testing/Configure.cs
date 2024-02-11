@@ -17,7 +17,7 @@
 using NCommon.Data;
 using NCommon.State;
 using Rhino.Mocks;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 
 namespace NCommon.Testing
 {

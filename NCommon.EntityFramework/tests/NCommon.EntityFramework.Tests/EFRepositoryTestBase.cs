@@ -1,6 +1,6 @@
 using System;
 using System.Data.Objects;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.EntityFramework.Tests.HRDomain;
 using NCommon.Data.EntityFramework.Tests.OrdersDomain;
 using NCommon.State;
@@ -18,7 +18,7 @@ namespace NCommon.Data.EntityFramework.Tests
         protected Func<ObjectContext> HRContextProvider { get; private set; }
         protected EFUnitOfWorkFactory UnitOfWorkFactory { get; private set; }
 
-        [TestFixtureSetUp()]
+        [OneTimeSetUp()]
         public virtual void FixtureSetup()
         {
             OrdersContextProvider = () =>

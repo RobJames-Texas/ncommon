@@ -1,7 +1,7 @@
 using System;
 using System.Configuration;
 using System.Data.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.LinqToSql.Tests.HRDomain;
 using NCommon.Data.LinqToSql.Tests.OrdersDomain;
 using NCommon.State;
@@ -19,7 +19,7 @@ namespace NCommon.Data.LinqToSql.Tests
         protected Func<DataContext> HRContextProvider { get; private set; }
         protected LinqToSqlUnitOfWorkFactory UnitOfWorkFactory { get; private set; }
 
-        [TestFixtureSetUp()]
+        [OneTimeSetUp()]
         public virtual void FixtureSetup()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["testDb"].ConnectionString;

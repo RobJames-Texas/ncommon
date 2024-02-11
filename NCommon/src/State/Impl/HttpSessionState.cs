@@ -14,8 +14,6 @@
 //limitations under the License. 
 #endregion
 
-using System;
-using System.Collections;
 using Common.Logging;
 using NCommon.Context;
 
@@ -27,7 +25,7 @@ namespace NCommon.State.Impl
     public class HttpSessionState : ISessionState
     {
         readonly IContext _context;
-        ILog _logger = LogManager.GetCurrentClassLogger();
+        ILog _logger = LogManager.GetLogger<HttpSessionState>();
 
         /// <summary>
         /// Default Constructor.

@@ -1,6 +1,6 @@
 using System.Data.Objects;
 using Castle.Windsor;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.ContainerAdapter.CastleWindsor;
 using NCommon.Data;
 using NCommon.Data.EntityFramework;
@@ -14,7 +14,7 @@ namespace NCommon.ContainerAdapters.Tests.CastleWindsor
     {
         IWindsorContainer _container;
 
-        [TestFixtureSetUp()]
+        [OneTimeSetUp()]
         public void FixtureSetup()
         {
             _container = new WindsorContainer();

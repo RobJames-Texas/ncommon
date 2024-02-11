@@ -14,7 +14,7 @@ namespace NCommon.Tests.Data
     {
         readonly FakeTransactionManager _transactionManager = new FakeTransactionManager();
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             UnitOfWorkManager.SetTransactionManagerProvider(() => _transactionManager);
@@ -31,7 +31,7 @@ namespace NCommon.Tests.Data
 
             new UnitOfWorkAttribute().Start(mockControllerContext);
             
-            Assert.NotNull(contextItems[UnitOfWorkAttribute.ContextUnitOfWorkKey]);
+            Assert.That(contextItems[UnitOfWorkAttribute.ContextUnitOfWorkKey] != null);
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace NCommon.Tests.Data
 
             new UnitOfWorkAttribute().OnActionExecuting(mockControllerContext);
 
-            Assert.NotNull(contextItems[UnitOfWorkAttribute.ContextUnitOfWorkKey]);
+            Assert.That(contextItems[UnitOfWorkAttribute.ContextUnitOfWorkKey] != null);
         }
 
         [Test]

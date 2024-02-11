@@ -2,7 +2,7 @@ using System;
 using System.Transactions;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.Impl;
 using NCommon.Data.NHibernate.Tests.HRDomain.Domain;
 using NCommon.Data.NHibernate.Tests.OrdersDomain;
@@ -26,7 +26,7 @@ namespace NCommon.Data.NHibernate.Tests
         /// <summary>
         /// Sets up the NHibernate SessionFactory and NHUnitOfWorkFactory.
         /// </summary>
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public virtual void SetUp()
         {
             OrdersDomainFactory = Fluently.Configure()

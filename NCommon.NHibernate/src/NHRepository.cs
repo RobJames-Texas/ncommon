@@ -16,7 +16,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Extensions;
 using NHibernate;
 using NHibernate.Linq;
@@ -41,21 +41,13 @@ namespace NCommon.Data.NHibernate
         /// </summary>
         public NHRepository ()
         {
-            Initialize();           
-        }
-        
-         /// <summary>
-        /// Default Init.
-        /// </summary>
-        protected virtual void Initialize()
-        {
             if (ServiceLocator.Current == null)
                 return;
 
             var sessions = ServiceLocator.Current.GetAllInstances<ISession>();
             if (sessions != null && sessions.Count() > 0)
                 _privateSession = sessions.FirstOrDefault();
-        }         
+        }
 
         /// <summary>
         /// Gets the <see cref="ISession"/> instnace that is used by the repository.

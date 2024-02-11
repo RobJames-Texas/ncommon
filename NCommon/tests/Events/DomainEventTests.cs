@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Events;
 using NCommon.State;
 using NCommon.Testing;

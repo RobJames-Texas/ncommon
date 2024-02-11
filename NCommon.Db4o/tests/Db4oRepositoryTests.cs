@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Db4objects.Db4o;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.Db4o.Tests.Domain;
 using NCommon.Extensions;
 using NCommon.Specifications;
@@ -20,7 +20,7 @@ namespace NCommon.Data.Db4o.Tests
         IObjectServer _db4oServer;
         readonly string _databasePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "testdatabase.db4o");
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             if (File.Exists(_databasePath))
@@ -119,7 +119,6 @@ namespace NCommon.Data.Db4o.Tests
                     orderId = ordersRepository.Select(x => x.OrderID).First();
                 }
 
-                Assert.NotNull(orderId);
                 using (new UnitOfWorkScope())
                 {
                     var outerRepository = new Db4oRepository<Order>();

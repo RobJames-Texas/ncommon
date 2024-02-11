@@ -16,7 +16,7 @@
 
 using System;
 using Common.Logging;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Data.Impl;
 using NCommon.State;
 

@@ -14,16 +14,11 @@
 //limitations under the License. 
 #endregion
 
+using CommonServiceLocator;
 using System;
 using System.Collections.Generic;
 using System.Data.Objects;
-using System.Data.Objects.DataClasses;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using Microsoft.Practices.ServiceLocation;
-using NCommon.Expressions;
-using NCommon.Extensions;
 
 namespace NCommon.Data.EntityFramework
 {
@@ -41,22 +36,13 @@ namespace NCommon.Data.EntityFramework
         /// </summary>
         public EFRepository()
         {
-           Initialize();
-        }
-        
-        
-        /// <summary>
-        /// Default Init.
-        /// </summary>
-        protected virtual void Initialize()
-        {
-             if (ServiceLocator.Current == null) 
+            if (ServiceLocator.Current == null)
                 return;
 
             var sessions = ServiceLocator.Current.GetAllInstances<IEFSession>();
             if (sessions != null && sessions.Count() > 0)
                 _privateSession = sessions.First();
-        }        
+        }
 
         /// <summary>
         /// Gets the <see cref="ObjectContext"/> to be used by the repository.

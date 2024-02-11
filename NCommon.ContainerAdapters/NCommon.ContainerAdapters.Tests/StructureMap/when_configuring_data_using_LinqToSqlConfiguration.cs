@@ -1,5 +1,5 @@
 using System.Data.Linq;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.ContainerAdapter.StructureMap;
 using NCommon.Data;
 using NCommon.Data.LinqToSql;
@@ -14,7 +14,7 @@ namespace NCommon.ContainerAdapters.Tests.StructureMap
     {
         IContainer _container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _container = new Container();

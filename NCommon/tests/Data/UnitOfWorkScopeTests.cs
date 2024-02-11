@@ -10,7 +10,7 @@ namespace NCommon.Tests.Data
     {
         readonly FakeTransactionManager _transactionManager = new FakeTransactionManager();
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             UnitOfWorkManager.SetTransactionManagerProvider(() => _transactionManager);
@@ -24,7 +24,7 @@ namespace NCommon.Tests.Data
             _transactionManager.ScopeRollbackAction = null;
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void FixtureTearDown()
         {
             UnitOfWorkManager.SetTransactionManagerProvider(null);
@@ -77,14 +77,14 @@ namespace NCommon.Tests.Data
     {
         readonly FakeTransactionManager _transactionManager = new FakeTransactionManager();
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             UnitOfWorkManager.SetTransactionManagerProvider(() => _transactionManager);
             UnitOfWorkSettings.AutoCompleteScope = true;
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void FixtureTearDown()
         {
             UnitOfWorkManager.SetTransactionManagerProvider(null);

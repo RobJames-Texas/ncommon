@@ -17,7 +17,7 @@
 using System;
 using System.Collections.Generic;
 using Common.Logging;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using NCommon.Extensions;
 
 namespace NCommon.Data.Impl

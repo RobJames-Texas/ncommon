@@ -17,6 +17,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using NCommon.Expressions;
@@ -128,7 +130,7 @@ namespace NCommon.Data.NHibernate
             var values = new object[names.Length];
             for (var i = 0; i < names.Length; i++)
                 values[i] = NHibernateUtil.GuessType(_properties[i].PropertyType)
-                                          .NullSafeGet(dr, names[i], session, owner);
+                                          .NullSafeGet((DbDataReader)dr, new string[]{names[i]}, session, owner);
             return CreateInstance(values);
         }
 
@@ -155,7 +157,7 @@ namespace NCommon.Data.NHibernate
 
                 var property = _properties[i];
                 var propValue = property.GetValue(value, null);
-                NHibernateUtil.GuessType(property.PropertyType).NullSafeSet(cmd, propValue, propIndex, session);
+                NHibernateUtil.GuessType(property.PropertyType).NullSafeSet((DbCommand)cmd, propValue, propIndex, session);
                 propIndex++;
             }
         }
@@ -212,6 +214,16 @@ namespace NCommon.Data.NHibernate
         public virtual object Replace(object original, object target, ISessionImplementor session, object owner)
         {
             return !this.IsMutable ? original : this.DeepCopy(original);
+        }
+
+        public object NullSafeGet(DbDataReader dr, string[] names, ISessionImplementor session, object owner)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NullSafeSet(DbCommand cmd, object value, int index, bool[] settable, ISessionImplementor session)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
