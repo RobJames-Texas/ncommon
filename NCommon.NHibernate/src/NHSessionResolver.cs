@@ -15,10 +15,10 @@
 #endregion
 
 
-using System;
-using System.Collections.Generic;
 using NCommon.Extensions;
 using NHibernate;
+using System;
+using System.Collections.Generic;
 
 namespace NCommon.Data.NHibernate
 {
@@ -75,8 +75,8 @@ namespace NCommon.Data.NHibernate
         /// <param name="factoryProvider">A <see cref="Func{T}"/> of type <see cref="ISessionFactory"/>.</param>
         public void RegisterSessionFactoryProvider(Func<ISessionFactory> factoryProvider)
         {
-            Guard.Against<ArgumentNullException>(factoryProvider == null,
-                                                 "Expected a non-null Func<ISessionFactory> instance.");
+            _ = factoryProvider ?? throw new ArgumentNullException(nameof(factoryProvider), "Expected a non-null Func<ISessionFactory> instance.");
+
             var key = Guid.NewGuid();
             _sessionFactories.Add(key, factoryProvider);
             //Getting the factory and initializing populating _sessionFactoryTypeCache.
@@ -84,7 +84,7 @@ namespace NCommon.Data.NHibernate
             var classMappings = factory.GetAllClassMetadata();
             if (classMappings != null && classMappings.Count > 0)
                 classMappings.ForEach(map => _sessionFactoryTypeCache
-                                                 .Add(map.Value.GetMappedClass(EntityMode.Poco), key));
+                                                 .Add(map.Value.MappedClass, key));
         }
 
         /// <summary>

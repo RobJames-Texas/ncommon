@@ -1,28 +1,16 @@
+using NCommon.Data;
 using System;
 using System.Web.Mvc;
-using Common.Logging;
-using NCommon.Data;
 
 namespace NCommon.Mvc
 {
     public class UnitOfWorkAttribute : ActionFilterAttribute
     {
-        FilterScope _filterScope = FilterScope.Action;
-        TransactionMode _transactionMode = TransactionMode.Default;
-        readonly static ILog Log = LogManager.GetCurrentClassLogger();
         public static readonly string ContextUnitOfWorkKey = "UnitOfWorkAttribute_Request_UnitOfWork";
 
-        public FilterScope Scope
-        {
-            get { return _filterScope; }
-            set { _filterScope = value; }
-        }
+        public FilterScope Scope { get; set; } = FilterScope.Action;
 
-        public TransactionMode TransactionMode
-        {
-            get { return _transactionMode; }
-            set { _transactionMode = value; }
-        }
+        public TransactionMode TransactionMode { get; set; } = TransactionMode.Default;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -39,7 +27,7 @@ namespace NCommon.Mvc
                 return;
             }
 
-            if (_filterScope != FilterScope.Action) 
+            if (Scope != FilterScope.Action) 
                 return;
 
             try
@@ -55,7 +43,7 @@ namespace NCommon.Mvc
 
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
-            if (_filterScope != FilterScope.Result)
+            if (Scope != FilterScope.Result)
                 return;
 
             if (filterContext.Exception != null)
@@ -79,7 +67,7 @@ namespace NCommon.Mvc
 
         public void Start(ControllerContext filterContext)
         {
-            var unitOfWork = new UnitOfWorkScope(_transactionMode);
+            var unitOfWork = new UnitOfWorkScope(TransactionMode);
             filterContext.HttpContext.Items[ContextUnitOfWorkKey] = unitOfWork;
         }
 

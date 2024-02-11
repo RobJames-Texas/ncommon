@@ -4,8 +4,8 @@ using FluentNHibernate.Cfg.Db;
 using NCommon.Data.NHibernate.Tests.OrdersDomain;
 using NCommon.Data.NHibernate.Tests.HRDomain.Domain;
 using NHibernate;
-using NHibernate.ByteCode.Castle;
 using NUnit.Framework;
+using NHibernate.Bytecode;
 
 namespace NCommon.Data.NHibernate.Tests
 {
@@ -15,20 +15,20 @@ namespace NCommon.Data.NHibernate.Tests
         ISessionFactory _ordersFactory;
         ISessionFactory _hrFactory;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetUp()
         {
             _ordersFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2005
                               .ConnectionString(connection => connection.FromConnectionStringWithKey("testdb")))
-                .ProxyFactoryFactory<ProxyFactoryFactory>()
+                .ProxyFactoryFactory<StaticProxyFactoryFactory>()
                 .Mappings(mappings => mappings.FluentMappings.AddFromAssembly(typeof (Order).Assembly))
                 .BuildSessionFactory();
 
             _hrFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2005
                               .ConnectionString(connection => connection.FromConnectionStringWithKey("testdb")))
-                .ProxyFactoryFactory<ProxyFactoryFactory>()
+                .ProxyFactoryFactory<StaticProxyFactoryFactory>()
                 .Mappings(mappings => mappings.FluentMappings.AddFromAssembly(typeof(SalesPerson).Assembly))
                 .BuildSessionFactory();
         }

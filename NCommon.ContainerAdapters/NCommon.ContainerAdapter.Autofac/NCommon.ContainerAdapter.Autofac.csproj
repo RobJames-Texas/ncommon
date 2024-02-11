@@ -39,26 +39,6 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\ncommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <ItemGroup Condition="$(TargetFrameworkVersion)=='v4.0'">
-    <Reference Include="Autofac, Version=2.4.5.724, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET40\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Configuration, Version=2.4.5.724, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET40\Autofac.Configuration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFrameworkVersion)=='v3.5'">
-    <Reference Include="Autofac, Version=2.4.5.724, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET35\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Configuration, Version=2.4.5.724, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.2.4.5.724\lib\NET35\Autofac.Configuration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />

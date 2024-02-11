@@ -11,7 +11,7 @@ namespace NCommon.ContainerAdapters.Tests.StructureMap
     {
         IContainer _container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _container = new Container();

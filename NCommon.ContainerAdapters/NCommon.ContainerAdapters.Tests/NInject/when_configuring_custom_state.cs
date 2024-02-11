@@ -12,7 +12,7 @@ namespace NCommon.ContainerAdapters.Tests.Ninject
     {
         IKernel _kernel;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _kernel = new StandardKernel();

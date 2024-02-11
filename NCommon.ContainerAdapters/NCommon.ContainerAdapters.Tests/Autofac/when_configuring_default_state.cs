@@ -13,7 +13,7 @@ namespace NCommon.ContainerAdapters.Tests.Autofac
     {
         IContainer _container;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             var builder = new ContainerBuilder();

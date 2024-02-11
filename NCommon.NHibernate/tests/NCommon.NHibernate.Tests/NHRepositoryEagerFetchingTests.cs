@@ -28,8 +28,8 @@ namespace NCommon.Data.NHibernate.Tests
                     scope.Commit();
                 }
 
-                Assert.NotNull(savedOrder);
-                Assert.NotNull(savedOrder.Customer);
+                Assert.That(savedOrder != null);
+                Assert.That(savedOrder.Customer != null);
                 Assert.DoesNotThrow(() => { var firstName = savedOrder.Customer.FirstName; });
             }
         }
@@ -61,12 +61,12 @@ namespace NCommon.Data.NHibernate.Tests
                     scope.Commit();
                 }
 
-                Assert.NotNull(savedCustomer);
-                Assert.True(NHibernateUtil.IsInitialized(savedCustomer.Orders));
-                savedCustomer.Orders.ForEach(order =>
+                Assert.That(savedCustomer != null);
+                Assert.That(NHibernateUtil.IsInitialized(savedCustomer.Orders));
+                savedCustomer.Orders.ToList().ForEach(order =>
                 {
-                    Assert.True(NHibernateUtil.IsInitialized(order.Items));
-                    order.Items.ForEach(orderItem => NHibernateUtil.IsInitialized(orderItem.Product));
+                    Assert.That(NHibernateUtil.IsInitialized(order.Items));
+                    order.Items.ToList().ForEach(orderItem => NHibernateUtil.IsInitialized(orderItem.Product));
                 });
             }
         }
@@ -101,12 +101,12 @@ namespace NCommon.Data.NHibernate.Tests
                     scope.Commit();
                 }
 
-                Assert.NotNull(savedCustomer);
-                Assert.NotNull(savedCustomer.Orders);
-                savedCustomer.Orders.ForEach(order =>
+                Assert.That(savedCustomer != null);
+                Assert.That(savedCustomer.Orders != null);
+                savedCustomer.Orders.ToList().ForEach(order =>
                 {
-                    Assert.NotNull(order.Items);
-                    order.Items.ForEach(orderItem => Assert.NotNull(orderItem.Product));
+                    Assert.That(order.Items != null);
+                    order.Items.ToList().ForEach(orderItem => Assert.That(orderItem.Product != null));
                 });
             }
         }

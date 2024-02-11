@@ -28,7 +28,7 @@ namespace NCommon.ContainerAdapters.Tests.Ninject
             adapter.RegisterGeneric(typeof (IGenericInterface<>), typeof (GenericImpl<>));
 
             var instance = kernel.Get<IGenericInterface<string>>();
-            Assert.NotNull(instance);
+            Assert.That(instance != null);
             Assert.That(instance, Is.TypeOf(typeof(GenericImpl<string>)));
         }
     }

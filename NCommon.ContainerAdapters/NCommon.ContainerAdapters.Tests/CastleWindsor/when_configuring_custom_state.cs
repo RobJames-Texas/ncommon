@@ -12,7 +12,7 @@ namespace NCommon.ContainerAdapters.Tests.CastleWindsor
     {
         IWindsorContainer _container = null;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             _container = new WindsorContainer();
