@@ -6,4 +6,12 @@
     <AssemblyOriginatorKeyFile>.\..\ncommon.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="StructureMap" Version="4.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NCommon.Minimal\NCommon.Minimal.csproj" />
+  </ItemGroup>
+
 </Project>

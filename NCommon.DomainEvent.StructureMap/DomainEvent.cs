@@ -14,8 +14,8 @@
 //limitations under the License. 
 #endregion
 
-using CommonServiceLocator;
 using NCommon.State;
+using StructureMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +30,18 @@ namespace NCommon.Events
     {
         const string CallbackListKey = "DomainEvent.Callbacks";
 
+        public static IContainer Container { get; private set; }
+        
+        /// <summary>
+        /// You must initialize this class before use. 
+        /// </summary>
+        /// <param name="container">Your initialized StructureMap IContainer.</param>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static void Initialize(IContainer container) 
+        {
+            Container = container ?? throw new ArgumentNullException(nameof(container));
+        }
+
         ///<summary>
         /// Registers a callback to be called when a domain event is raised.
         ///</summary>
@@ -37,7 +49,7 @@ namespace NCommon.Events
         ///<typeparam name="T">The domain event that the callback is registered to handle.</typeparam>
         public static void RegisterCallback<T>(Action<T> callback) where T : IDomainEvent
         {
-            var state = ServiceLocator.Current.GetInstance<IState>();
+            var state = Container.GetInstance<IState>();
             var callbacks = state.Local.Get<IList<Delegate>>(CallbackListKey);
             if (callbacks == null)
             {
@@ -52,7 +64,7 @@ namespace NCommon.Events
         ///</summary>
         public static void ClearCallbacks()
         {
-            var state = ServiceLocator.Current.GetInstance<IState>();
+            var state = Container.GetInstance<IState>();
             state.Application.Remove<IList<Delegate>>(CallbackListKey);
         }
 
@@ -63,8 +75,8 @@ namespace NCommon.Events
         ///<typeparam name="T">A type implementing <see cref="IDomainEvent"/></typeparam>
         public static void Raise<T>(T @event) where T : IDomainEvent
         {
-            var state = ServiceLocator.Current.GetInstance<IState>();
-            var handlers = ServiceLocator.Current.GetAllInstances<IHandles<T>>();
+            var state = Container.GetInstance<IState>();
+            var handlers = Container.GetAllInstances<IHandles<T>>();
             if (handlers != null)
                 handlers.ToList().ForEach(x => x.Handle(@event));
 
