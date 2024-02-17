@@ -28,8 +28,8 @@ namespace NCommon.Tests.Events
             locator.Stub(x => x.GetInstance<IState>()).Return(state);
             ServiceLocator.SetLocatorProvider(() => locator);
 
-            var mockTestEvent1Handler = MockRepository.GenerateMock<Handles<TestEvent1>>();
-            var mockTestEvent2Handler = MockRepository.GenerateMock<Handles<TestEvent2>>();
+            var mockTestEvent1Handler = MockRepository.GenerateMock<IHandles<TestEvent1>>();
+            var mockTestEvent2Handler = MockRepository.GenerateMock<IHandles<TestEvent2>>();
 
             DomainEvent.RegisterCallback<TestEvent1>(mockTestEvent1Handler.Handle);
             DomainEvent.RegisterCallback<TestEvent2>(mockTestEvent2Handler.Handle);
@@ -51,8 +51,8 @@ namespace NCommon.Tests.Events
             locator.Stub(x => x.GetInstance<IState>()).Return(state);
             ServiceLocator.SetLocatorProvider(() => locator);
 
-            var mockTestEvent1Handler = MockRepository.GenerateMock<Handles<TestEvent1>>();
-            var mockTestEvent2Handler = MockRepository.GenerateMock<Handles<TestEvent2>>();
+            var mockTestEvent1Handler = MockRepository.GenerateMock<IHandles<TestEvent1>>();
+            var mockTestEvent2Handler = MockRepository.GenerateMock<IHandles<TestEvent2>>();
 
             DomainEvent.RegisterCallback<TestEvent1>(mockTestEvent1Handler.Handle);
             DomainEvent.RegisterCallback<TestEvent2>(mockTestEvent2Handler.Handle);
@@ -72,10 +72,10 @@ namespace NCommon.Tests.Events
             var locator = MockRepository.GenerateStub<IServiceLocator>();
             locator.Stub(x => x.GetInstance<IState>()).Return(state);
             ServiceLocator.SetLocatorProvider(() => locator);
-            var mockTest1Handler = MockRepository.GenerateMock<Handles<TestEvent1>>();
-            var mockTest2Handler = MockRepository.GenerateMock<Handles<TestEvent2>>();
+            var mockTest1Handler = MockRepository.GenerateMock<IHandles<TestEvent1>>();
+            var mockTest2Handler = MockRepository.GenerateMock<IHandles<TestEvent2>>();
 
-            locator.Expect(x => x.GetAllInstances<Handles<TestEvent1>>())
+            locator.Expect(x => x.GetAllInstances<IHandles<TestEvent1>>())
                    .Return(new[]{mockTest1Handler});
 
             ServiceLocator.SetLocatorProvider(() => locator);

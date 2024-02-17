@@ -65,7 +65,7 @@ namespace NCommon.Events
         public static void Raise<T>(T @event) where T : IDomainEvent
         {
             var state = ServiceLocator.Current.GetInstance<IState>();
-            var handlers = ServiceLocator.Current.GetAllInstances<Handles<T>>();
+            var handlers = ServiceLocator.Current.GetAllInstances<IHandles<T>>();
             if (handlers != null)
                 handlers.ForEach(x => x.Handle(@event));
 

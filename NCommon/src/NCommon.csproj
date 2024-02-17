@@ -108,8 +108,6 @@
     <Compile Include="Data\UnitOfWorkManager.cs" />
     <Compile Include="Data\TransactionMode.cs" />
     <Compile Include="Events\DomainEvent.cs" />
-    <Compile Include="Events\Handles.cs" />
-    <Compile Include="Events\IDomainEvent.cs" />
     <Compile Include="Expressions\ExpressionVisitor.cs" />
     <Compile Include="Expressions\MemberAccessPathVisitor.cs" />
     <Compile Include="Expressions\MemberAccessPropertyInfoVisitor.cs" />
@@ -136,10 +134,6 @@
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\IUnitOfWorkFactory.cs" />
     <Compile Include="Data\UnitOfWorkScope.cs" />
-    <Compile Include="State\IApplicationState.cs" />
-    <Compile Include="State\ICacheState.cs" />
-    <Compile Include="State\ILocalState.cs" />
-    <Compile Include="State\ILocalStateSelector.cs" />
     <Compile Include="State\Impl\ApplicationState.cs" />
     <Compile Include="State\Impl\DefaultLocalStateSelector.cs" />
     <Compile Include="State\Impl\DefaultSessionStateSelector.cs" />
@@ -148,14 +142,10 @@
     <Compile Include="State\Impl\HttpSessionState.cs" />
     <Compile Include="State\Impl\LocalStateWrapper.cs" />
     <Compile Include="State\Impl\SessionStateWrapper.cs" />
-    <Compile Include="State\Impl\State.cs" />
     <Compile Include="State\Impl\ThreadLocalState.cs" />
     <Compile Include="State\Impl\Utils.cs" />
     <Compile Include="State\Impl\WcfLocalState.cs" />
     <Compile Include="State\Impl\WcfSessionState.cs" />
-    <Compile Include="State\ISessionState.cs" />
-    <Compile Include="State\ISessionStateSelector.cs" />
-    <Compile Include="State\IState.cs" />
     <Compile Include="Util\ConnectionString.cs" />
     <Compile Include="Util\GuidCombGenerator.cs" />
     <Compile Include="Util\Inflector.cs" />
@@ -190,6 +180,12 @@
     <PackageReference Include="CommonServiceLocator">
       <Version>2.0.7</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NCommon.Minimal\NCommon.Minimal.csproj">
+      <Project>{df42c3c4-8460-442f-9a28-511444a00573}</Project>
+      <Name>NCommon.Minimal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
