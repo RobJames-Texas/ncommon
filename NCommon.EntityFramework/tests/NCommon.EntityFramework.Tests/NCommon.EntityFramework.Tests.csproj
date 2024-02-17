@@ -127,7 +127,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\NCommon.EntityFramework.csproj">
       <Project>{98FB0800-6605-4FD9-9948-36D11C744881}</Project>
-      <Name>NCommon.EntityFramework %28src\NCommon.EntityFramework%29</Name>
+      <Name>NCommon.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\NCommon.EntityFramework.Tests.HRDomain\NCommon.EntityFramework.Tests.HRDomain.csproj">
       <Project>{420EF34B-811B-48BD-9E2C-2E7A8DAA291F}</Project>

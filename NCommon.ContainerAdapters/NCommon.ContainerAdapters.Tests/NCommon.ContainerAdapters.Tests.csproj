@@ -85,11 +85,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\NCommon.EntityFramework\src\NCommon.EntityFramework.csproj">
       <Project>{98FB0800-6605-4FD9-9948-36D11C744881}</Project>
-      <Name>NCommon.EntityFramework %28src\NCommon.EntityFramework%29</Name>
+      <Name>NCommon.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\NCommon.LinqToSql\src\NCommon.LinqToSql.csproj">
       <Project>{2781A661-3EA8-4917-B043-F3193FB0F7C8}</Project>
-      <Name>NCommon.LinqToSql %28src\NCommon.LinqToSql%29</Name>
+      <Name>NCommon.LinqToSql</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\NCommon.Minimal\NCommon.Minimal.csproj">
       <Project>{df42c3c4-8460-442f-9a28-511444a00573}</Project>
@@ -97,7 +97,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\NCommon.NHibernate\src\NCommon.NHibernate.csproj">
       <Project>{01A6D2F9-C34E-4D87-BE7A-4F36A78BED66}</Project>
-      <Name>NCommon.NHibernate %28src\NCommon.NHibernate%29</Name>
+      <Name>NCommon.NHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\NCommon\src\NCommon.csproj">
       <Project>{C853736D-3576-468A-A716-ACEC1CD4FAC1}</Project>

@@ -107,7 +107,6 @@
     <Compile Include="Data\RepositoryWrapperBase.cs" />
     <Compile Include="Data\UnitOfWorkManager.cs" />
     <Compile Include="Data\TransactionMode.cs" />
-    <Compile Include="Events\DomainEvent.cs" />
     <Compile Include="Expressions\ExpressionVisitor.cs" />
     <Compile Include="Expressions\MemberAccessPathVisitor.cs" />
     <Compile Include="Expressions\MemberAccessPropertyInfoVisitor.cs" />
@@ -187,6 +186,7 @@
       <Name>NCommon.Minimal</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

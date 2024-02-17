@@ -125,6 +125,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NCommon.DomainEvent.CommonServiceLocator\NCommon.DomainEvent.CommonServiceLocator.csproj">
+      <Project>{9518a1b8-eb82-45e0-ab29-5a755d55ea84}</Project>
+      <Name>NCommon.DomainEvent.CommonServiceLocator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\NCommon.Minimal\NCommon.Minimal.csproj">
       <Project>{df42c3c4-8460-442f-9a28-511444a00573}</Project>
       <Name>NCommon.Minimal</Name>

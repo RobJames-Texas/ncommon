@@ -107,7 +107,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\NCommon.EntityFramework.csproj">
       <Project>{98FB0800-6605-4FD9-9948-36D11C744881}</Project>
-      <Name>NCommon.EntityFramework %28src\NCommon.EntityFramework%29</Name>
+      <Name>NCommon.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

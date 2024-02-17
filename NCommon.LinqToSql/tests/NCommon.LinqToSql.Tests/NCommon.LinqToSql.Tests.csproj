@@ -142,7 +142,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\NCommon.LinqToSql.csproj">
       <Project>{2781A661-3EA8-4917-B043-F3193FB0F7C8}</Project>
-      <Name>NCommon.LinqToSql %28src\NCommon.LinqToSql%29</Name>
+      <Name>NCommon.LinqToSql</Name>
     </ProjectReference>
     <ProjectReference Include="..\NCommon.LinqToSql.Tests.HRDomain\NCommon.LinqToSql.Tests.HRDomain.csproj">
       <Project>{BB86E27C-08D2-4B58-A07B-B72E897DC2F5}</Project>
