@@ -55,12 +55,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NCommon\src\NCommon.csproj">
-      <Project>{C853736D-3576-468A-A716-ACEC1CD4FAC1}</Project>
-      <Name>NCommon</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\ncommon.snk">
       <Link>ncommon.snk</Link>
     </None>
@@ -70,6 +64,12 @@
     <PackageReference Include="Ninject">
       <Version>3.3.6</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NCommon.Minimal\NCommon.Minimal.csproj">
+      <Project>{df42c3c4-8460-442f-9a28-511444a00573}</Project>
+      <Name>NCommon.Minimal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

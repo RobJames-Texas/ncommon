@@ -80,7 +80,6 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Configuration\IContainerAdapter.cs" />
     <Compile Include="Configuration\IDataConfiguration.cs" />
     <Compile Include="Configuration\DefaultStateConfiguration.cs" />
     <Compile Include="Configuration\INCommonConfig.cs" />

@@ -108,6 +108,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\NCommon.Minimal\NCommon.Minimal.csproj">
+      <Project>{DF42C3C4-8460-442F-9A28-511444A00573}</Project>
+      <Name>NCommon.Minimal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\NCommon\src\NCommon.csproj">
       <Project>{C853736D-3576-468A-A716-ACEC1CD4FAC1}</Project>
       <Name>NCommon</Name>
